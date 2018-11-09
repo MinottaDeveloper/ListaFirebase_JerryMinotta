@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BIENVENIDO"
+        android:textSize="20pt"/>
+
+    <EditText
+        android:id="@+id/et_correoLogin"
+        android:layout_marginTop="40dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Correo electrónico"
+        android:textSize="12pt"
+        android:padding="5dp"/>
+
+    <EditText
+        android:id="@+id/et_contraLogin"
+        android:layout_marginTop="20dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Contraseña"
+        android:textSize="12pt"
+        android:padding="5dp"/>
+
+    <Button
+        android:id="@+id/btn_iniciarSesionLogin"
+        android:layout_marginTop="20dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="INICIAR SESIÓN"
+        android:textSize="10pt"
+        android:padding="5dp"/>
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="---------------------------------- O ----------------------------------"
+        android:textSize="10pt"/>
+
+    <Button
+        android:id="@+id/btn_registrarseLogin"
+        android:layout_marginTop="20dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="REGISTRARSE"
+        android:textSize="8pt"
+        android:padding="2dp"/>
+
+
+
+
+</LinearLayout>

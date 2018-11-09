@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "376088348962",
+    "firebase_url": "https://registro-bb4e8.firebaseio.com",
+    "project_id": "registro-bb4e8",
+    "storage_bucket": "registro-bb4e8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:376088348962:android:6df323ebc3f6730b",
+        "android_client_info": {
+          "package_name": "developer.jerryminotta.listafirebase_jerryminotta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "376088348962-5uli065l84thg69paqca59f92bgj8vii.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "developer.jerryminotta.listafirebase_jerryminotta",
+            "certificate_hash": "57ad841a1e8164ba2b7c2dd0c467d7e3db31d978"
+          }
+        },
+        {
+          "client_id": "376088348962-vct6d5ru214uoc13hs7iji7ed8bbq6sk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWqZmd6eVY2nk1htDc3bORNH17SUVIF50"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "376088348962-vct6d5ru214uoc13hs7iji7ed8bbq6sk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:376088348962:android:866211ae09ca0059",
+        "android_client_info": {
+          "package_name": "dmi.com.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "376088348962-h2bqqh0kh28gq9d9sehcog9nq8vmi7i8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dmi.com.myapplication",
+            "certificate_hash": "d784ab6c47b0e6f24c169f69e4a49a19d9390f43"
+          }
+        },
+        {
+          "client_id": "376088348962-vct6d5ru214uoc13hs7iji7ed8bbq6sk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWqZmd6eVY2nk1htDc3bORNH17SUVIF50"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "376088348962-vct6d5ru214uoc13hs7iji7ed8bbq6sk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
