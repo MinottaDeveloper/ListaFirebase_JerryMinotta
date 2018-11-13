@@ -65,7 +65,6 @@ public class Registro extends AppCompatActivity {
                 final String nombre= et_nombre.getText().toString();
                 final String correo= et_correo.getText().toString();
                 final String contrasena= et_contrasena.getText().toString();
-                final String lista= "lista".toString();
 
                 if(nombre.equals("") || correo.equals("") || contrasena.equals("")){
                     Toast.makeText(Registro.this, "Complete todos los campos", Toast.LENGTH_LONG).show();
@@ -81,12 +80,10 @@ public class Registro extends AppCompatActivity {
                         if(task.isSuccessful()) {
                             Toast.makeText(Registro.this, "Registro Exitoso!", Toast.LENGTH_SHORT).show();
 
-                            Usuario usuario = new Usuario(auth.getCurrentUser().getUid(), nombre, correo, contrasena, lista);
+                            Usuario usuario = new Usuario(auth.getCurrentUser().getUid(), nombre, correo, contrasena);
                             reference.child(auth.getCurrentUser().getUid()).setValue(usuario);
 
                            auth.signInWithEmailAndPassword(correo, contrasena);
-
-
 
                             Intent intent = new Intent(Registro.this, HomeListas.class);
                             startActivity(intent);

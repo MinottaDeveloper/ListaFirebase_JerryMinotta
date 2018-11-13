@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Lista {
 
     String titulo;
-    ArrayList<Item> items;
+
 
     public Lista(){
 
@@ -14,7 +14,7 @@ public class Lista {
     public Lista(String titulo) {
         this.titulo = titulo;
 
-        items = new ArrayList<>();
+
     }
 
     public String getTitulo() {

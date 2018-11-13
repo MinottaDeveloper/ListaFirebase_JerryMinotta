@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
@@ -42,7 +43,12 @@ public class HomeListas extends AppCompatActivity {
     ImageButton btn_logOut, btn_agregarLista;
     EditText et_nombreLista;
 
-   // private RecyclerView mainList;
+
+    TextView output;
+
+    ArrayList<Lista> listas;
+    RecyclerView recyclerView;
+    ListaAdapter listaAdapter;
 
 
 
@@ -51,7 +57,7 @@ public class HomeListas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_listas);
 
-
+        output = findViewById(R.id.output);
 
         //mainList= findViewById(R.id.main_list);
 
@@ -68,6 +74,17 @@ public class HomeListas extends AppCompatActivity {
         tv_bienvenido= findViewById(R.id.tv_bienvenido);
 
         et_nombreLista= findViewById(R.id.et_nombreLista);
+
+
+
+        listas= new ArrayList<>();
+
+        recyclerView= findViewById(R.id.rv_listaListas);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+
+
+
+        //___________________________________
 
         if(firebaseUser!=null) {
            // Toast.makeText(HomeListas.this, "" + auth.getCurrentUser().getUid(), Toast.LENGTH_LONG).show();
@@ -91,11 +108,50 @@ public class HomeListas extends AppCompatActivity {
                 }
             });
 
+                    //-----------------------------------------------agrega listas iniciales
+
+
+            firebaseDatabase.getReference().child("usuarios").child(idLocal).child("listas").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    output.setText("");
+                    listas.clear();
+
+                    for(DataSnapshot lista : dataSnapshot.getChildren()){
+                        Lista l = lista.getValue(Lista.class);
+
+
+                        listas.add(new Lista(l.getTitulo()));
+                        //listaAdapter.setListas(listas);
+                        listaAdapter.setListas(listas);
+                        output.append(l.getTitulo()+"\n");
+                        //  output.setText("");
+                    }
+
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
 
 
 
+        }else{
+            Intent intent= new Intent(HomeListas.this, MainActivity.class);
+            startActivity(intent);
         }
 
+
+        //-----------------------------------------------------------------------------------------------
+        //listas.add( new Lista("Tareas y vainas raras"));
+
+        listaAdapter = new ListaAdapter(listas);
+        recyclerView.setAdapter(listaAdapter);
+
+        //------------------------------------------------------------------------------------------------
 
         btn_logOut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,6 +160,7 @@ public class HomeListas extends AppCompatActivity {
 
                 Intent intent= new Intent(HomeListas.this, MainActivity.class);
                 startActivity(intent);
+               // listas.clear();
             }
         });
 
@@ -124,3 +181,5 @@ public class HomeListas extends AppCompatActivity {
 
             }
 }
+
+

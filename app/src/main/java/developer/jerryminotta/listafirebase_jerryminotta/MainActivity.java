@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                             finish();
 
                         }else{
-                            Toast.makeText(MainActivity.this, "Correo o contrasena no validos",  Toast.LENGTH_LONG).show();
+                            Toast.makeText(MainActivity.this, "Correo o contrasena no validos;"+task.getException(),  Toast.LENGTH_LONG).show();
                         }
                     }
                 });

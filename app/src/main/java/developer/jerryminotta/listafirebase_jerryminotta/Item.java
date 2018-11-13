@@ -3,7 +3,7 @@ package developer.jerryminotta.listafirebase_jerryminotta;
 public class Item {
 
     String nombre, descripcion;
-    Boolean completado;
+    boolean completado;
 
     public Item(String nombre, String descripcion, boolean completado) {
         this.nombre = nombre;
@@ -27,11 +27,11 @@ public class Item {
         this.descripcion = descripcion;
     }
 
-    public Boolean getCompletado() {
+    public boolean getCompletado() {
         return completado;
     }
 
-    public void setCompletado(Boolean completado) {
+    public void setCompletado(boolean completado) {
         this.completado = completado;
     }
 }

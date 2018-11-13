@@ -1,19 +1,21 @@
 package developer.jerryminotta.listafirebase_jerryminotta;
 
+import java.util.ArrayList;
+
 public class Usuario {
 
-    private String uid, nombre, correo, pass, listas;
+    private String uid, nombre, correo, pass;
+    //public ArrayList<Lista> listas;
 
     public Usuario(){
 
     }
 
-    public Usuario(String uid, String nombre, String correo, String pass, String listas) {
+    public Usuario(String uid, String nombre, String correo, String pass) {
         this.uid = uid;
         this.nombre = nombre;
         this.correo = correo;
         this.pass = pass;
-        this.listas = listas;
     }
 
     public String getUid() {
@@ -48,11 +50,4 @@ public class Usuario {
         this.pass = pass;
     }
 
-    public String getListas() {
-        return listas;
-    }
-
-    public void setListas(String listas) {
-        this.listas = listas;
-    }
 }

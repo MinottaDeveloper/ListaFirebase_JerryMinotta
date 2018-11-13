@@ -21,7 +21,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".Registro" />
-        <activity android:name=".HomeListas"></activity>
+        <activity android:name=".HomeListas" />
+        <activity android:name=".Renglon" />
+        <activity android:name=".ItemListas"></activity>
     </application>
 
 </manifest>
