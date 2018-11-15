@@ -50,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String correo = et_correo.getText().toString();
-                String contrasena= et_contrasena.getText().toString();
+                String correo = et_correo.getText().toString().trim();
+                String contrasena= et_contrasena.getText().toString().trim();
 
                 auth.signInWithEmailAndPassword(correo, contrasena).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override

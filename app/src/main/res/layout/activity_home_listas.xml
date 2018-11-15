@@ -13,7 +13,7 @@
 
         <TextView
             android:id="@+id/tv_bienvenido"
-            android:layout_width="335dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:text="Bienvenido"
@@ -38,7 +38,7 @@
 
         <EditText
             android:id="@+id/et_nombreLista"
-            android:layout_width="335dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:hint="Nombre de la lista"/>
 
@@ -62,19 +62,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/output"
-            android:textSize="15pt"
+            android:textSize="12pt"
             android:textStyle="bold"
             android:textAlignment="center"
-            android:text="PRUEBA"
+            android:text="LISTAS DE ACTIVIDADES"
             android:padding="3dp"/>
 
         <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/rv_listaListas">
 
 
         </android.support.v7.widget.RecyclerView>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:id="@+id/lv_tareasListas"
+            android:layout_height="wrap_content">
+
+
+        </ListView>
 
     </LinearLayout>
 

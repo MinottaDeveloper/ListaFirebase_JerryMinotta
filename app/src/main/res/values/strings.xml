@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ListaFirebase_JerryMinotta</string>
+    <string name="btn_registro_ingresar">Terminar</string>
 </resources>

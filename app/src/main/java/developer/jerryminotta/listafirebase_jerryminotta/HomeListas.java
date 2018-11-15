@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,17 +23,20 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeListas extends AppCompatActivity {
+public class HomeListas extends AppCompatActivity implements  settingList{
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference reference;
     FirebaseAuth auth;
     TextView tv_bienvenido;
+
+    ListaFirebase<Lista>  listaFirebase;
 
     String idLocal;
 
@@ -82,6 +86,8 @@ public class HomeListas extends AppCompatActivity {
         recyclerView= findViewById(R.id.rv_listaListas);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
+        final ListView lv_tareasListas= findViewById(R.id.lv_tareasListas);
+
 
 
         //___________________________________
@@ -109,7 +115,7 @@ public class HomeListas extends AppCompatActivity {
             });
 
                     //-----------------------------------------------agrega listas iniciales
-
+/*
 
             firebaseDatabase.getReference().child("usuarios").child(idLocal).child("listas").addValueEventListener(new ValueEventListener() {
                 @Override
@@ -136,8 +142,52 @@ public class HomeListas extends AppCompatActivity {
 
                 }
             });
+*/
+        //----------------------------------------------------
+
+            listaFirebase = new ListaFirebase<>(new ListaFirebase.getVariables<Lista>() {
+                @Override
+                public ListView getViewListas() {
+                    return lv_tareasListas;
+                }
+
+                @Override
+                public Query getUbicacionBase() {
+                    return firebaseDatabase.getReference().child("usuarios").child(idLocal).child("listas");
+                }
+
+                @Override
+                public Class getClaseModelo() {
+                    return Lista.class;
+                }
+
+                @Override
+                public int getLayoutList() {
+                    return R.layout.lista_list;
+                }
+
+                @Override
+                public void populateView(@NonNull View v, @NonNull Lista model, final int position) {
+
+                    TextView tv_nameLista = v.findViewById(R.id.tv_nameLista);
+
+                    tv_nameLista.setText(model.getTitulo());
+
+                   //listaFirebase.getNodoPrincipal().push().setValue()
 
 
+                    v.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            listaFirebase.getDato(position).removeValue();
+                        }
+                    });
+
+
+                }
+            });
+
+            //--------------------------------------
 
         }else{
             Intent intent= new Intent(HomeListas.this, MainActivity.class);
@@ -179,7 +229,34 @@ public class HomeListas extends AppCompatActivity {
         });
 
 
+
+
+
             }
+
+    @Override
+    public void onStart() {
+        listaFirebase.startList();
+        super.onStart();
+    }
+
+    @Override
+    public void onStop() {
+        listaFirebase.stopList();
+        super.onStop();
+    }
+/*
+    @Override
+    protected void onStart() {
+        listaFirebase.startList();
+        super.onStart();
+    }
+
+    @Override
+    protected void onStop() {
+        listaFirebase.stopList();
+        super.onStop();
+    }*/
 }
 
 

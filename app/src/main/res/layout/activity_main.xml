@@ -10,21 +10,35 @@
         android:text="BIENVENIDO"
         android:textSize="20pt"/>
 
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Correo electronico:"
+        android:inputType="textEmailAddress"
+        android:layout_marginTop="40dp"/>
+
+
     <EditText
         android:id="@+id/et_correoLogin"
-        android:layout_marginTop="40dp"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:hint="Correo electrónico"
         android:textSize="12pt"
         android:padding="5dp"/>
 
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Contraseña:"
+        android:layout_marginTop="20dp"/>
+
     <EditText
         android:id="@+id/et_contraLogin"
-        android:layout_marginTop="20dp"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:hint="Contraseña"
+        android:inputType="textPassword"
         android:textSize="12pt"
         android:padding="5dp"/>
 
@@ -41,7 +55,7 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="---------------------------------- O ----------------------------------"
+        android:text="---------------- O ----------------"
         android:textSize="10pt"/>
 
     <Button
